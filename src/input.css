@@ -1,2 +1,12 @@
 @import 'tailwindcss';
 @import "tailwindcss/preflight";
+
+aside a {
+    @apply block
+}
+
+aside a.active,
+aside a:hover,
+aside a:focus-visible {
+    @apply text-amber-300 text-[1rem] 
+}

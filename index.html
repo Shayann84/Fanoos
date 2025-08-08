@@ -11,73 +11,102 @@
 
   <body class="text-black bg-[#ccc]">
 
-      <header class="sticky top-0 w-full h-20 flex items-center gap-2 z-[1] shadow
-              bg-linear-to-br from-amber-300 via-amber-200 to-amber-300">
+    <main id="main" class="transition ">
+      <header class="sticky top-0 w-full h-20 flex flex-row-reverse items-center justify-start 
+      gap-3 z-[1] shadow bg-gradient-to-br from-amber-300 via-amber-200 to-amber-300">
 
-        <div class="w-fit h-fit bg-black text-white text-[1rem] relative">جای لوگو</div>
+        <div class="w-fit h-fit bg-black text-white text-[1rem] !ml-6">جای لوگو</div>
         <ul>
           <li class="inline"><a href="#">عضویت</a></li>
           <li class="inline">/</li>
           <li class="inline"><a href="#">ورود</a></li>
         </ul>
+        <button id="btn" class="openbtn" onclick="decide()">☰</button>
       </header>
 
-      <aside class="fixed top-0 right-0 w-20 h-[100vh] z-10 bg-cyan-300">
-        <ul>
-          <li><a href="#">رودمپ ها</a></li>
-          <li><a href="#">تماس با ما</a></li>
-          <li><a href="#">همکاری با ما</a></li>
-          <li><a href="#">درباره ما</a></li>
-          <li><a href="#">بلاگ</a></li>
-          <li><a href="#">کاریابی</a></li>
-          <li class="mt-auto"><a href="#">قوانین و مقررات</a></li>
-        </ul>
+
+      <aside id="Sidebar" class="fixed top-0 right-0 w-0 h-[100vh] overflow-x-hidden z-10 bg-cyan-600">
+
+        <nav class="h-full">
+          <ul class="flex flex-col gap-3 justify-between text-[#ccc] h-full">
+            <li class="!mt-3"><a href="#">رودمپ ها</a></li>
+            <li><a href="#">تماس با ما</a></li>
+            <li><a href="#">همکاری با ما</a></li>
+            <li><a href="#">درباره ما</a></li>
+            <li><a href="#">بلاگ</a></li>
+            <li><a href="#">کاریابی</a></li>
+            <li class="!mt-auto !mb-5"><a href="#">قوانین و مقررات</a></li>
+          </ul>
+        </nav>
       </aside>
 
      <div class="relative w-full min-h-screen bg-black shadow text-white flex flex-col">
-      فضای مشکی جای گذاشتن عکس
-      <main class="flex-1 flex flex-col items-center justify-center p-8 gap-8">
-        <h1 class="!text-7xl">فانوس</h1>
-        <h2 class="!text-5xl">مسیرت رو روشن کن</h2>
-      </main>
+        فضای مشکی جای گذاشتن عکس
+        <div class="flex-1 flex flex-col items-center justify-center p-8 gap-8">
+          <h1 class="!text-7xl">فانوس</h1>
+          <h2 class="!text-5xl">مسیرت رو روشن کن</h2>
+        </div>
     
-    </div>
-    <div class="z-20">
-      <pre>
-    x
-    x
-    xx
-    x
-    x
-    x
-    x
-    x
-    x
-    x
-    xxxx
-    x
-    x
-    x
-    xxxxx
-    xxxxx
-    x
-    x
-    x
-    xxxxx
-    xxxxx
-    xx
-    xxxxxx
-    x
-    x
-    xx
-    x
+      </div>
+      <div class="z-20">
+          <pre>
+        x
+        x
+        xx
+        x
+        x
+        x
+        x
+        x
+        x
+        x
+        xxxx
+        x
+        x
+        x
+        xxxxx
+        xxxxx
+        x
+        x
+        x
+        xxxxx
+        xxxxx
+        xx
+        xxxxxx
+        x
+        x
+        xx
+        x
 
-    xxxxx
+        xxxxx
 
-    x
-    x
-    x
-    </pre>
-    </div>
+        x
+        x
+        x
+        </pre>
+      </div>
+    </main>
+
+    <script>
+      let open = false;
+      function openNav() {
+        document.getElementById("Sidebar").style.width = "250px";
+        document.getElementById("main").style.marginRight = "250px";
+        document.getElementById("btn").innerHTML = "X";
+        open = true;
+      }
+
+      function closeNav() {
+        document.getElementById("Sidebar").style.width = "0";
+        document.getElementById("main").style.marginRight= "0";
+        document.getElementById("btn").innerHTML = "☰";
+        open = false;
+      }
+
+      function decide() {
+        if (!open) openNav();  
+          else closeNav();
+      }
+    </script>
   </body>
 </html>
